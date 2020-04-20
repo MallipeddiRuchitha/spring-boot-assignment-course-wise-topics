@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+	<title>Save Topic</title>
+</head>
+
+<body>
+
+	<div class="container">
+	
+		<h3>Topic Directory</h3>
+		<hr>
+		
+		<p class="h4 mb-4">Save Topic</p>
+	
+		<form action="#" th:action="@{/topics/saveTopic}"
+						 th:object="${topic}" method="POST">
+		
+			<!-- Add hidden form field to handle update -->
+
+			<!--<input type="hidden" name="course.course_name" value="${course.course_name}" />-->
+			<input type="text" th:field="*{topicName}"
+					class="form-control mb-4 col-4" placeholder="topic">
+
+			<input type="text" th:field="*{level}"
+					class="form-control mb-4 col-4" placeholder="level">
+			<input type="hidden" th:value="${course.course_name}" th:name="course.course_name" />
+			<input type="hidden" th:value="${course.course_description}" th:name="course.course_description" />
+
+				
+			<button type="submit" class="btn btn-info col-2">Save</button>
+						
+		</form>
+	
+
+		
+	</div>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
